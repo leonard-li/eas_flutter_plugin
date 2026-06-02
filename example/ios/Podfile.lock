@@ -1,0 +1,49 @@
+PODS:
+  - eas_flutter_plugin (0.0.1):
+    - Flutter
+    - YF_Core/Core
+    - YF_DataAcqu (>= 5.3.2)
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - YF_Core (1.7.2):
+    - YF_Core/None (= 1.7.2)
+    - YF_Utils (>= 1.2.9)
+  - YF_Core/Core (1.7.2):
+    - YF_Utils (>= 1.2.9)
+  - YF_Core/None (1.7.2):
+    - YF_Utils (>= 1.2.9)
+  - YF_DataAcqu (5.3.2):
+    - YF_Core (>= 1.7.2)
+  - YF_Utils (1.2.9)
+
+DEPENDENCIES:
+  - eas_flutter_plugin (from `.symlinks/plugins/eas_flutter_plugin/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - YF_Core
+    - YF_DataAcqu
+    - YF_Utils
+
+EXTERNAL SOURCES:
+  eas_flutter_plugin:
+    :path: ".symlinks/plugins/eas_flutter_plugin/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  eas_flutter_plugin: e5d962c4a279b4c8b94fe9cec18c2fb295a352fd
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  YF_Core: 8cc5aac9c33b11aac354db03be63e926b1b3c3c6
+  YF_DataAcqu: d39d40eb328186cd792777328e5a7e491bab877e
+  YF_Utils: ce823353b73bdac0a188fa918c61dabca5f28205
+
+PODFILE CHECKSUM: be275d28c283c0450d96af2a0ffc9f8c1bbdd513
+
+COCOAPODS: 1.16.2
