@@ -78,7 +78,7 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
     else if ("initSdk".equals(call.method)) {
       LogUtils.d("YFDataAgent init:"+appId);
       YFDataAgent.init(this.mActivity, null);
-      YFDataAgent instance = YFDataAgent.sharedInstance(appId);
+      YFDataAgent instance = YFDataAgent.sharedInstance(this.mActivity,appId);
       result.success(null);
     }
     else if ("login".equals(call.method)) {
