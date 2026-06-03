@@ -5,6 +5,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            allowInsecureProtocol = true
+            url "http://mvn.yifants.cn/artifactory/fineboost"
+        }
     }
 
     dependencies {
@@ -16,6 +20,10 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            allowInsecureProtocol = true
+            url "http://mvn.yifants.cn/artifactory/fineboost"
+        }
     }
 }
 
@@ -36,6 +44,8 @@ android {
     }
 
     dependencies {
+        implementation 'com.fineboost.sdk:dataacqu:5.0.55'
+        implementation 'com.fineboost.sdk:utils:1.3.9'
         testImplementation("junit:junit:4.13.2")
         testImplementation("org.mockito:mockito-core:5.0.0")
     }
