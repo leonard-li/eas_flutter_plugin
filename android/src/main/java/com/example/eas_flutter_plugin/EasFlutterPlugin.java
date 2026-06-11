@@ -70,7 +70,7 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
 
     @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    LogUtils.setDebug(true);
+    LogUtils.d("YFDataAgent onMethodCall:"+call.method);
     String appId = call.argument("appId");
     if ("getPlatformVersion".equals(call.method)) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
@@ -315,7 +315,8 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
       result.success(String.valueOf(firstStartTime));
     }
     else if ("getRegion".equals(call.method)) {
-      YFDataAgent.getRegion(new RegionCallback() {
+      YFDataAgent instance = YFDataAgent.sharedInstance(mContext,appId);
+      instance.getRegoin(new RegionCallback() {
         @Override
         public void onRegSuccess(String reg) {
           result.success(reg);
@@ -323,17 +324,20 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
 
         @Override
         public void onRegFailed(String error) {
-          result.success(null);
+          result.success(error);
         }
       });
     }
     else if ("exitAcquApp".equals(call.method)) {
-      YFDataAgent.exitAcquApp(new AcquExitCallBack() {
+      YFDataAgent instance = YFDataAgent.sharedInstance(mContext,appId);
+      instance.exitApp(new AcquExitCallBack() {
         @Override
         public void onExit() {
-          result.success(null);
+          Boolean isExit = true;
+          result.success(isExit);
         }
       });
+
     }
     else {
       result.notImplemented();
