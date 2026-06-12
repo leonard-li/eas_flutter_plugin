@@ -117,6 +117,34 @@ class _MyAppState extends State<MyApp> {
             Expanded(
                 child: OutlinedButton(
                     child: const Text(
+                      'USER_APPEND',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () => userAppend())),
+            Expanded(
+                child: OutlinedButton(
+                    child: const Text(
+                      'USER_UNIQ_APPEND',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () => userUniqAppend())),
+            Expanded(
+                child: OutlinedButton(
+                    child: const Text(
+                      'USER_UNSET',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () => userUnset())),
+          ],
+        ),
+      ),
+      Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+                child: OutlinedButton(
+                    child: const Text(
                       'FLUSH',
                       style: TextStyle(fontSize: 14),
                     ),
@@ -278,6 +306,18 @@ class _MyAppState extends State<MyApp> {
 
   void userAdd() {
     _easFlutterPlugin.userAdd(eas_appId,{'total_revenue': 30});
+  }
+
+  void userAppend() {
+    _easFlutterPlugin.userAppend(eas_appId,{'list': ['apple', 'ball', 1234]});
+  }
+
+  void userUniqAppend() {
+    _easFlutterPlugin.userUniqAppend(eas_appId,{'list': ['apple', 'ball', 1234, 'apple', 'ball']});
+  }
+
+  void userUnset() {
+    _easFlutterPlugin.userUnset(eas_appId,{'user_name': 'TA'});
   }
 
   void setSuperProperties() {

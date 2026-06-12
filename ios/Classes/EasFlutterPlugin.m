@@ -130,9 +130,9 @@
     }
     else if ([@"unsetSuperProperty" isEqualToString:call.method]) {
         if ([arguments objectForKey:@"appId"]) {
-            [[YFDataHelper sharedInstanceWithAppId:[arguments objectForKey:@"appId"]] removeSuperPros:[arguments objectForKey:@"key"]];
+            [[YFDataHelper sharedInstanceWithAppId:[arguments objectForKey:@"appId"]] removeSuperPros:[arguments objectForKey:@"property"]];
         } else {
-            [YFDataHelper.sharedInstance removeSuperPros:[arguments objectForKey:@"key"]];
+            [YFDataHelper.sharedInstance removeSuperPros:[arguments objectForKey:@"property"]];
         }
         result(nil);
     }
