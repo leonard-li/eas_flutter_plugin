@@ -225,7 +225,7 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
       }
     }
     else if ("unsetSuperProperty".equals(call.method)) {
-      String key = call.argument("key");
+      String key = call.argument("property");
       if (!TextUtils.isEmpty(appId)){
         YFDataAgent instance = YFDataAgent.sharedInstance(mContext,appId);
         instance.unsetSuperPro(key);
@@ -259,7 +259,7 @@ public class EasFlutterPlugin implements FlutterPlugin, MethodCallHandler, Activ
         enable = true;
       }
       if(enable){
-        YFDataAgent.deBugDevice();
+        LogUtils.setDebug(enable);
       }
       result.success(null);
     }
